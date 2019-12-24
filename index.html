@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>CountdownToDo</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="vendor/materialize/css/materialize.min.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#register">Register</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content card-body">
+          <div id="login" class="tab-pane active">
+            <!-- Default form login -->
+            <form class="text-center border border-light p-5" action="#!">
+              <!-- Email -->
+              <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+              <!-- Password -->
+              <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+              <div class="d-flex justify-content-around">
+                <div>
+                  <!-- Remember me -->
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                    <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                  </div>
+                </div>
+                <div>
+                  <!-- Forgot password -->
+                  <a href="">Forgot password?</a>
+                </div>
+              </div>
+              <!-- Sign in button -->
+              <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+              <!-- Register -->
+              <p>Not a member?
+                <a href="">Register</a>
+              </p>
+            </form>
+          </div>
+          <div id="register" class="tab-pane">
+            <!--Card content-->
+            <div class="card-body px-lg-5 pt-0">
+
+              <!-- Form -->
+              <form class="text-center" style="color: #757575;" action="#!">
+
+                <div class="form-row">
+                  <div class="col">
+                    <!-- First name -->
+                    <div class="md-form">
+                      <input type="text" id="materialRegisterFormFirstName" class="form-control">
+                      <label for="materialRegisterFormFirstName">First name</label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- Last name -->
+                    <div class="md-form">
+                      <input type="email" id="materialRegisterFormLastName" class="form-control">
+                      <label for="materialRegisterFormLastName">Last name</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- E-mail -->
+                <div class="md-form mt-0">
+                  <input type="email" id="materialRegisterFormEmail" class="form-control">
+                  <label for="materialRegisterFormEmail">E-mail</label>
+                </div>
+
+                <!-- Password -->
+                <div class="md-form">
+                  <input type="password" id="materialRegisterFormPassword" class="form-control"
+                    aria-describedby="materialRegisterFormPasswordHelpBlock">
+                  <label for="materialRegisterFormPassword">Password</label>
+                  <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                  </small>
+                </div>
+
+                <!-- Sign up button -->
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+                  type="submit">Sign in</button>
+
+                <hr>
+                <!-- Terms of service 
+                <p>By clicking
+                  <em>Sign up</em> you agree to our
+                  <a href="" target="_blank">terms of service</a> -->
+              </form>
+              <!-- Form -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- container -->
+  </div> <!-- row -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Materialize JavaScript-->
+  <script type="text/javascript" src="vendor/materialize/js/materialize.min.js"></script>
+
+</body>
+
+</html>
