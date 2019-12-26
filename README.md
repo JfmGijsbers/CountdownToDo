@@ -14,4 +14,14 @@ TODOLIST FOR FUNCTIONALITIES
     o display
         x display in material design table
         x sortable on time / priority / estimated time taken
+- Play ambient sounds
+    o sound
+        x rain
+        x alpha waves
+    o functionality
+        x stop at break
+
+TODOLIST FOR SECONDARY FUNCTIONALITIES
+- Point system
+- Export stats
     

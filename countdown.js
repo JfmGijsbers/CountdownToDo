@@ -17,7 +17,7 @@ var yourDateToGo = new Date(); //here you're making new Date object
         var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);//conversion miliseconds on seconds
         if (seconds < 10) seconds="0"+seconds;
 
-        document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s"; // putting number of days, hours, minutes and seconds in div, 
+        document.getElementById("countdown").innerHTML = /* days + "d " + hours + "h " + */ minutes + "m " + seconds + "s"; // putting number of days, hours, minutes and seconds in div, 
         //which id is countdown
 
         if (timeLeft <= 0) {
