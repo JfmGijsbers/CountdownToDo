@@ -1,0 +1,40 @@
+TaskManagement.py explanation file
+----------------------------------
+
+INPUTS
+@param      TaskName                
+@param      Estimated duration
+@param      (optional) Due time
+    For multiple tasks
+
+@param      exampleJSON     JSONFile
+@return     taskList        DataFrame of tasks (params id, taskName, duration, priority)
+toTaskList   
+--------------------------------------------------------------------------------------------------------------------------------------------
+addLunch
+--------------------------------------------------------------------------------------------------------------------------------------------
+This functions adds a "task"-row for user-specified lunch time (user needs to specify duration and starttime of lunch)       
+@param      taskList
+@return     taskList
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+pomodoroAmount
+--------------------------------------------------------------------------------------------------------------------------------------------
+This function adds two columns, one for amount of pomodoro's, and a boolean if those pomodoro's exceed 4, and thus need to be separated 
+@param      taskList
+@return     taskList  
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+noDueTime
+--------------------------------------------------------------------------------------------------------------------------------------------
+This functions add +2 to all priority levels without a due time
+@param      taskList
+@return     taskList     
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+sort
+--------------------------------------------------------------------------------------------------------------------------------------------
+This function sorts the taskList dataframe into the "ideal" schedule. 
+
+
+
