@@ -15,9 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.contrib.auth import views
+from django.contrib.auth import views as auth_views
+from login import views
+from django.conf.urls import url
+#from account.forms import LoginForm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.LoginView.as_view()),
+    #path('', views.LoginView.as_view()),
+    #path('', views.index, name='index'),
+
+    url('',auth_views.LoginView.as_view(), name="login"),
+    url('home/', views.home, {'template_name': 'dashboard/home.html'}, name='home'),
+    url(r'^logout/$',auth_views.LogoutView.as_view(), name="logout"),
+
+
 ]

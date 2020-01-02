@@ -51,7 +51,7 @@
                     <!-- Default form login -->
                     <form class="text-center border border-light p-5" action="#!" method="post">
                       <!-- Email -->
-                     {% comment %} <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+                      <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
                       <!-- Password -->
                       <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
                       <div class="d-flex justify-content-around">
@@ -62,7 +62,7 @@
                             <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
                           </div>
                         </div>
-                      </div>{% endcomment %}
+                      </div>
                       <!-- Sign in button -->
                       {% csrf_token %}
                       {{ form.as_p }} 
