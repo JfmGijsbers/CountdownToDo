@@ -17,13 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 from django.contrib import admin
+from django.contrib.auth.views import LogoutView
 
 from accounts import views as accounts_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^signup/$', accounts_views.signup, name='signup'),
+    #url(r'^signup/$', accounts_views.PersonCreateView.as_view(), name='signup'),
     path('', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-
+    url(r'^logout/$', LogoutView.as_view(), {'next_page': ''}, name='logout'),
+    path('home/', accounts_views.home),
 ]

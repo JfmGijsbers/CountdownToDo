@@ -1,5 +1,13 @@
     {% extends 'base.html' %}
     {% block title %}home.html{% endblock %}
     {% block rightSideNav %}
-        <p>{{ user.get_username }}</p>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ user.get_username }}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+            </div>
+          </div>
     {% endblock %}
