@@ -1,4 +1,4 @@
-"""login URL Configuration
+"""countdowntodo URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -14,20 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.contrib.auth import views as auth_views
-from login import views
+from django.urls import path, include
 from django.conf.urls import url
-#from account.forms import LoginForm
+from django.contrib import admin
+
+from accounts import views as accounts_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', views.LoginView.as_view()),
-    #path('', views.index, name='index'),
-
-    url('',auth_views.LoginView.as_view(), name="login"),
-    url('home/', views.home, {'template_name': 'dashboard/home.html'}, name='home'),
-    url(r'^logout/$',auth_views.LogoutView.as_view(), name="logout"),
-
+    url(r'^signup/$', accounts_views.signup, name='signup'),
+    path('', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 
 ]

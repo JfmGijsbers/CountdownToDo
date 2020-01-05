@@ -10,9 +10,6 @@
  
   <title>CountdownToDo</title>
   {% load static %}
-
-  <!-- Bootstrap core CSS -->
-  <!--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" type="text/css"/>
   
   <script src="{% static 'countdown.js' %}"></script>
@@ -32,8 +29,92 @@
           <li class="nav-item"><a href="#" class="nav-link">Settings</a></li>
           <li class="nav-item"><a href="#" class="nav-link">About</a></li>
         </ul>
+      </div> <!-- Container for regular navbar items -->
+      <!-- Login/Register tab -->
+      <div id="myDropDown" class="dropdown">
+        <a class="btn btn-primary" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+          Login<span class="caret"></span>
+        </a>
+        <ul id="myTabs" class="dropdown-menu" style="right: 0; left:auto; min-width: 350px;" role="menu" aria-labelledby="dLabel">
+          <ul class="nav nav-tabs justify-content-center">
+            <li class="active nav-item"><a href="#login" class="nav-link" data-toggle="tab">Login</a></li>
+            <li class="nav-item"><a href="#register" data-toggle="tab" class="nav-link">Register</a></li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane active" id="login">
+                <div id="login" class="tab-pane active">
+
+                    <!-- Default form login -->
+                    <form class="text-center border border-light p-5" action="/your-name/" method="post">
+                      <!-- Email -->
+                      <!-- <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+                       Password
+                      <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+                      <div class="d-flex justify-content-around">
+                        <div>
+                          Remember me
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                            <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                          </div>
+                        </div>
+                      </div> -->
+                      <!-- Sign in button -->
+                      {% csrf_token %}
+                      {{ form }} 
+                      <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+                      
+                      <div>
+                          <!-- Forgot password -->
+                          <a href="">Forgot password?</a>
+                        </div>
+                    </form>
+                  </div>
+            </div> <!-- End of div login -->
+            <div class="tab-pane" id="register">
+                <div id="register" class="tab-pane">
+                      <!-- Form -->
+                      <form class="text-center border border-light p-5" style="color: #757575;" action="#!">
+                        <div class="form-row">
+                          <div class="col">
+                            <!-- First name -->
+                            <div class="md-form">
+                              <input type="text" id="materialRegisterFormFirstName" class="form-control">
+                              <label for="materialRegisterFormFirstName">First name</label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <!-- Last name -->
+                            <div class="md-form">
+                              <input type="text" id="materialRegisterFormLastName" class="form-control">
+                              <label for="materialRegisterFormLastName">Last name</label>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- E-mail -->
+                        <div class="md-form mt-0">
+                          <input type="email" id="materialRegisterFormEmail" class="form-control">
+                          <label for="materialRegisterFormEmail">E-mail</label>
+                        </div>
+                        <!-- Password -->
+                        <div class="md-form">
+                          <input type="password" id="materialRegisterFormPassword" class="form-control"
+                            aria-describedby="materialRegisterFormPasswordHelpBlock">
+                          <label for="materialRegisterFormPassword">Password</label>
+                          <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                          </small>
+                        </div>
+                        <!-- Sign up button -->
+                        <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+                          type="submit">Sign in</button>
+                        <hr>
+                      </form>
+            </div> <!-- End of register tab -->
+          </div>
+        </ul>
+      </div> <!-- Login/Register tab-->
     </div>
-  </div>
   </nav>
 
 
