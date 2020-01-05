@@ -9,4 +9,4 @@ def signup(request):
 
 
 class HomePageView(TemplateView):
-    template_name = 'index.html'
+    template_name = 'home.html'

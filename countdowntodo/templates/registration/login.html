@@ -1,11 +1,37 @@
     {% extends 'base.html' %}
-    {% block title %}Home{% endblock %}
-    {% block content %}
-    {% if user.is_authenticated %}
-      <div style="text-align:center">Hi {{ user.username }}! Welocme to Coding Infinite!!</div>
-      <p><a href="{% url 'logout' %}">logout</a></p>
-    {% else %}
-      <p>You are not logged in</p>
-      <a href="{% url 'login' %}">login</a>
-    {% endif %}
+    {% block title %}login.html{% endblock %}
+    {% block rightSideNav %}
+        <div id="myDropDown" class="dropdown">
+        <a class="btn btn-primary" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+          Login<span class="caret"></span>
+        </a>
+        <div id="myTabs" class="dropdown-menu" style="right: 0; left:auto; min-width: 350px;" role="menu" aria-labelledby="dLabel">
+          <!--<ul class="nav nav-tabs justify-content-center">
+            <li class="active nav-item"><a href="#login" class="nav-link" data-toggle="tab">Login</a></li>
+            <li class="nav-item"><a href="#register" data-toggle="tab" class="nav-link">Register</a></li>
+          </ul>
+          -->
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane active" id="login">
+                <h1>Login</h1>
+                <br>
+                <div id="login" class="tab-pane active">
+
+                    <!-- Default form login -->
+                    <div class="login-form">
+                    <form class="text-center border border-light p-5" action="#" method="post" id="form_login">
+                      {% csrf_token %}
+                      {{ form.as_p }}
+                      <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+                      <div>
+                          <a href="">Forgot password?</a>
+                        </div>
+                    </form>
+                    </div>
+                  </div>
+            </div> <!-- End of div login -->
+        </div>
+      </div> <!-- Login/Register tab-->
+      </div>
     {% endblock %}
