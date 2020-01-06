@@ -10,6 +10,8 @@
 
   <title>{% block title %}CountdownToDo{% endblock %}</title>
   {% load static %}
+
+  {% load crispy_forms_tags %}
   <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" type="text/css"/>
 
   <script src="{% static 'countdown.js' %}"></script>
@@ -76,6 +78,8 @@
                 <h5 class="card-title">Tasks</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Add new tasks here. When done, press the calculate button to get your optimal schedule</h6>
                 <hr>
+
+                  {% block addTask %}
                 <form>
                   <div class="form-row">
                     <div class="col-lg-4">
@@ -99,6 +103,8 @@
                     <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Add</button>
                   </div>
                 </form>
+                      {%  endblock %}
+
                 <hr>
                 <p class="card-text">
                   <table class="table">
