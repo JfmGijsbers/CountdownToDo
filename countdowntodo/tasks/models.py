@@ -6,7 +6,7 @@ from django.db import models
 class Task(models.Model):
     name = models.CharField('Task Name', max_length=120)
     priority = models.CharField(max_length=120)
-    duration = models.CharField(max_length=60)
+    duration = models.DurationField(max_length=60)
     due_time = models.DateTimeField('Task Due Time')
 
     class Meta:

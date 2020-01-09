@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block title %}home.html{% endblock %}
 {% block rightSideNav %}
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ user.get_username }}
+            {{ user.get_username }} -->
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#">Settings</a>
@@ -13,13 +14,9 @@
 {% endblock %}
 
 {% block addTask %}
-    <form action="" method="POST">
+    <form action="{% url "sendform" %}" method="POST">
         {% csrf_token %}
-        Task Name: <input type="text" name="name"/><br/>
-        Task Duration: <input type="text" name="duration"/><br/>
-        Task Priority: <input type="text" name="priority"/><br/>
-        Task Due time: <input type="text" name="dueTime"/><br/>
-
-        <input type="submit" value="Post"/>
+        {% crispy form %}
+        <input type="submit" value="Submit">
     </form>
 {% endblock %}

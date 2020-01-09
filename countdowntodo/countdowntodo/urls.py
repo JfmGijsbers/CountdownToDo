@@ -19,13 +19,18 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth.views import LogoutView
 
+from tasks import urls as task_urls
+
 from accounts import views as accounts_views
+from tasks import views as task_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^signup/$', accounts_views.signup, name='signup'),
+    url(r'^sendform/$', task_views.send_form, name='sendform'),
     path('', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('tasks/', include(task_urls)),
     url(r'^logout/$', LogoutView.as_view(), {'next_page': '/'}, name='logout'),
-    path('home/', accounts_views.home),
+    path('home/', accounts_views.home, name='home'),
 ]
